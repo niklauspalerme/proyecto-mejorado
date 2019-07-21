@@ -35,115 +35,18 @@ $imagen="http://ssl.gstatic.com/accounts/ui/avatar_2x.png";
     <!--Nuestra pagina de estilo-->
     <link rel="stylesheet" href="css/master.css">
 
+    <link rel="stylesheet" href="css/login.css">
+
     <title>BAST</title>
 
   </head>
 
-  <!--0)  Header-Navbar -->
-  <header>
-  <!--Navbar-->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"  style="background-color: indigo;">
+  <body>
 
-        <div class="container">
+    <!--Parte 1 del header-navbar -->
+    <?php require 'assets/navbar.php'; ?>
 
-              <!-- Navbar brand -->
-              <a class="navbar-brand" href="index.php" target="_blank">
-                <strong>BAST</strong>
-              </a>
-
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <!-- Collapsible content -->
-              <div class="collapse navbar-collapse" id="navbarNav">
-
-                <!-- Links Parte Izquier -->
-                <ul class="navbar-nav mr-auto smooth-scroll">
-                             <li class="nav-item">
-                                 <a class="nav-link" href="lugares.php">Lugares</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="actividades.php">Actividades</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="gastronomia.php">Gastronomia</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="hoteles.php">Hoteles</a>
-                             </li>
-
-                             <li class="nav-item">
-                                 <a class="nav-link" href="preguntas.php">FAQ
-                                 <i class="far fa-question-circle"></i>
-                                 </a>
-                             </li>
-
-                         </ul>
-
-                <!-- Links Parte dere -->
-                <ul class="navbar-nav nav-flex-icons">
-
-
-
-                  <!-- USUARIOS -->
-                  <!-- SI ESTA SIN LOGUEAR MOSTRAR ESTO -->
-
-                  <!--  USUARIO LOGUEADO MOSTRAR ESTO-->
-                  <li class="nav-item avatar dropdown">
-
-                    <!-- Foto de usuario -->
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink-40" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="<?= $imagen ;?>" class="rounded-circle z-depth-0 avatar" alt="avatar">
-                    </a>
-
-                    <!-- Parte del menu dropdown -->
-                    <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-40" style="background-color: #3f51b5ad;">
-
-                      <a class="dropdown-item nav-link" href="perfil.php">
-                        <i class="fas fa-address-card"></i>
-                        Perfil y Cuenta
-                      </a>
-
-                      <a class="dropdown-item nav-link" href="#">
-                        <i class="fas fa-cogs"></i>
-                        Preferencias
-                      </a>
-
-                      <div class="dropdown-divider"></div>
-
-                      <a class="dropdown-item nav-link" href="logout.php">
-                      <i class="fas fa-sign-out-alt"></i>
-                      Salir
-                      </a>
-
-                    </div>
-
-                  </li>
-
-                  <!--Login-->
-                  <?php if(!isset($_SESSION["email"])):?>
-                  <li class="nav-item">
-                      <a class="nav-link" href="login.php">
-                        <i class="fas fa-sign-in-alt"></i>
-                        Login
-                        <span class="sr-only">(current)</span>
-                      </a>
-                  </li>
-                <?php endif; ?>
-
-                </ul>
-
-              </div>
-                <!-- Collapsible content -->
-
-                 </div>
-                 <!-- Container -->
-
-            </nav> <!-- Fin de Navbar-->
-</header>
-
-    <!-- 1) Intro -->
+    <!-- Parte 2 Intro -->
     <section>
       <div class="container">
         <div class="row">
@@ -167,7 +70,7 @@ $imagen="http://ssl.gstatic.com/accounts/ui/avatar_2x.png";
       </div> <!--Fin container-->
     </section>
 
-    <!-- 2)Contenido -->
+    <!-- Parte 3 Contenido -->
     <main class="mt-5">
         <div class="container">
 
@@ -229,12 +132,12 @@ $imagen="http://ssl.gstatic.com/accounts/ui/avatar_2x.png";
                     <div class="col-lg-3 col-md-3 mb-3">
 
                         <div class="">
-                            <img src="img/Lugares.png" class="" alt="">
+                            <img src="img/Lugares.png" class="img-lugares" alt="">
 
                         </div>
 
                         <h4 class="my-4 font-weight-bold">Lugares</h4>
-                        <p class="grey-text"> Conocé los mejores lugares encantadores de nuestra ciudad, acojedores y divertidos para cada tipo de aventura</p>
+                        <p class="grey-text"> Conocé los mejores lugares encantadores de nuestra ciudad, acojedores y divertidos.</p>
 
                     </div>
                     <!--Grid column-->
@@ -357,7 +260,7 @@ $imagen="http://ssl.gstatic.com/accounts/ui/avatar_2x.png";
 
                         <p>destaca por su cantidad de espacios verdes. Casi siempre bien cuidados. Es una ciudad ideal para conocer caminando. Las mejores zonas para hacerlo son Recoleta, Palermo, La Boca, San Telmo... entre otras. Vale la pena conocer los parques y dedicarles tiempo.</p>
                         <p>por <a><strong>Matias Clark</strong></a>, 26/06/2019</p>
-                        <a class="btn btn-primary btn-md" href="lugares.php">Ver mas</a>
+                        <a class="btn button-login btn-md" href="lugares.php">Ver mas</a>
 
                     </div>
                     <!--Grid column-->
@@ -368,134 +271,17 @@ $imagen="http://ssl.gstatic.com/accounts/ui/avatar_2x.png";
             </section>
             <!--Section: Gallery-->
     </main>
-    <!--Main layout-->
 
-    <!-- Footer -->
-    <footer class="page-footer font-small unique-color-dark">
+    <!--Parte 4 del footer -->
+    <?php require 'assets/footer.php'; ?>
 
-        <!-- Social buttons -->
-        <div class="indigo">
-            <div class="container">
-                <!--Grid row-->
-                <div class="row py-4 d-flex align-items-center">
 
-                    <!--Grid column-->
-                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                        <h6 class="mb-0 white-text">Conectate con nosotros en nuestras redes sociales</h6>
-                    </div>
-                    <!--Grid column-->
+  </body>
 
-                    <!--Grid column-->
-                    <div class="col-md-6 col-lg-7 text-center text-md-right">
-                        <!--Facebook-->
-                        <a class="fb-ic ml-0">
-                            <i class="fab fa-facebook white-text mr-4"> </i>
-                        </a>
-                        <!--Twitter-->
-                        <a class="tw-ic">
-                            <i class="fab fa-twitter white-text mr-4"> </i>
-                        </a>
-                        <!--Google +-->
-                        <a class="gplus-ic">
-                            <i class="fab fa-google-plus white-text mr-4"> </i>
-                        </a>
-                        <!--Linkedin-->
-                        <a class="li-ic">
-                            <i class="fab fa-linkedin white-text mr-4"> </i>
-                        </a>
-                        <!--Instagram-->
-                        <a class="ins-ic">
-                            <i class="fab fa-instagram white-text mr-lg-4"> </i>
-                        </a>
-                    </div>
-                    <!--Grid column-->
 
-                </div>
-                <!--Grid row-->
-            </div>
-        </div>
-        <!-- Social buttons -->
 
-        <!--Footer Links-->
-        <div class="container mt-5 mb-4 text-center text-md-left">
-            <div class="row mt-3">
 
-                <!--First column-->
-                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <strong>BAST</strong>
-                    </h6>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>Empresa de turismo </p>
-                </div>
-                <!--/.First column-->
 
-                <!--Second column-->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <strong>Categorías</strong>
-                    </h6>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>
-                        <a href="#!">Lugares</a>
-                    </p>
-                    <p>
-                        <a href="#!">Actividades</a>
-                    </p>
-                    <p>
-                        <a href="#!">Gastronomia</a>
-                    </p>
-                    <p>
-                        <a href="#!">Hoteles</a>
-                    </p>
-                </div>
-                <!--/.Second column-->
 
-                <!--Third column-->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <strong>Ayuda</strong>
-                    </h6>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>
-                        <a href="#!">Tu cuenta</a>
-                    </p>
-                    <p>
-                        <a href="#!">Como registrarte</a>
-                    </p>
-                    <p>
-                        <a href="#!">Acerca de nosotros</a>
-                    </p>
 
-                </div>
-                <!--/.Third column-->
-
-                <!--Fourth column-->
-                <div class="col-md-4 col-lg-3 col-xl-3">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <strong>Contacto</strong>
-                    </h6>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>
-                        <i class="fas fa-home"></i></i> Buenos Aires, Argentina</p>
-                    <p>
-                        <i class="fa fa-envelope mr-3"></i> info@bast.com</p>
-                    <p>
-                        <i class="fa fa-phone mr-3"></i> + 5411 23460205</p>
-
-                </div>
-                <!--/.Fourth column-->
-
-            </div>
-        </div>
-        <!--/.Footer Links-->
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
-        </div>
-         <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
   </html>

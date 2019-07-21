@@ -55,30 +55,42 @@ hr.hr-light-morado {
   border-color: indigo;
 }
 
+img.img-lugares {
 
+  height: 60px;
+  width: 40px;
 
-/*========== Wrap1 ==============*/
+}
 
-/*================ Moroda =====================*/
+/*============= demas paginas ====================*/
+
+.morado {
+  color:indigo;
+
+}
+
+.wrap-jumbotron{
+
+margin-top: 100px;
+
+}
+
 h1.morado {
   color:indigo;
 }
 
 
-
-
-/*=================
-
-
-/*========
-Footer
-=========*/
+/*==========================
+===================== Footer
+========================= */
 
 footer.page-footer {
     bottom: 3 rem;
     margin-top: 50px;
     color: #fff;
 }
+
+/
 
 
 /*=====================Media Query====================*/

@@ -49,111 +49,10 @@ if (isset($_SESSION["avatar"])){
 
 <body>
 
-  <!--Parte 1 Header-Navbar -->
-  <header>
-    <!--Navbar-->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"  style="background-color: indigo;">
+  <!--Parte 1 del header-navbar -->
+  <?php require 'assets/navbar.php'; ?>
 
-        <div class="container">
-
-              <!-- Navbar brand -->
-              <a class="navbar-brand" href="index.php" target="_blank">
-                <strong>BAST</strong>
-              </a>
-
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <!-- Collapsible content -->
-              <div class="collapse navbar-collapse" id="navbarNav">
-
-                <!-- Links Parte Izquier -->
-                <ul class="navbar-nav mr-auto smooth-scroll">
-                             <li class="nav-item">
-                                 <a class="nav-link" href="lugares.php">Lugares</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="actividades.php">Actividades</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="gastronomia.php">Gastronomia</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="hoteles.php">Hoteles</a>
-                             </li>
-
-                             <li class="nav-item">
-                                 <a class="nav-link" href="preguntas.php">FAQ
-                                 <i class="far fa-question-circle"></i>
-                                 </a>
-                             </li>
-
-                         </ul>
-
-                <!-- Links Parte dere -->
-                <ul class="navbar-nav nav-flex-icons">
-
-
-
-                  <!-- USUARIOS -->
-                  <!-- SI ESTA SIN LOGUEAR MOSTRAR ESTO -->
-
-                  <!--  USUARIO LOGUEADO MOSTRAR ESTO-->
-                  <li class="nav-item avatar dropdown">
-
-                    <!-- Foto de usuario -->
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink-40" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="<?= $imagen ;?>" class="rounded-circle z-depth-0 avatar" alt="avatar">
-                    </a>
-
-                    <!-- Parte del menu dropdown -->
-                    <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-40" style="background-color: #3f51b5ad;">
-
-                      <a class="dropdown-item nav-link" href="perfil.php">
-                        <i class="fas fa-address-card"></i>
-                        Perfil y Cuenta
-                      </a>
-
-                      <a class="dropdown-item nav-link" href="#">
-                        <i class="fas fa-cogs"></i>
-                        Preferencias
-                      </a>
-
-                      <div class="dropdown-divider"></div>
-
-                      <a class="dropdown-item nav-link" href="logout.php">
-                      <i class="fas fa-sign-out-alt"></i>
-                      Salir
-                      </a>
-
-                    </div>
-
-                  </li>
-
-                  <!--Login-->
-                  <?php if(!isset($_SESSION["email"])):?>
-                  <li class="nav-item">
-                      <a class="nav-link" href="login.php">
-                        <i class="fas fa-sign-in-alt"></i>
-                        Login
-                        <span class="sr-only">(current)</span>
-                      </a>
-                  </li>
-                <?php endif; ?>
-
-                </ul>
-
-              </div>
-                <!-- Collapsible content -->
-
-                 </div>
-                 <!-- Container -->
-
-            </nav> <!-- Fin de Navbar-->
-  </header>
-
-  <!--Todo el cuerpo es Jumbotron-->
+  <!--Parte 2 del y contenido Jumbotron-->
   <div class="jumbotron">
 
     <div class="container bootstrap snippet">
@@ -230,14 +129,93 @@ if (isset($_SESSION["avatar"])){
 
         </div><!--Fin de parte izquierda-->
 
+        <!--2.1) Parte de la derecha-->
+        <div class="col-md-4 offset-md-1">
 
-        </div>
+          <div class="tab-content">
+
+            <div class="tab-pane active" id="home">
+
+              <hr>
+
+              <form class="form" action="##" method="post" id="registrationForm">
+
+                  <div class="form-group">
+                    <div class="col-xs-6">
+                                <label for="first_name"><h4>Nombre</h4></label>
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any." value="<?= $_SESSION["nombre"] ?>">
+                            </div>
+                  </div>
+
+                  <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="phone"><h4>Phone</h4></label>
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any." value="">
+                            </div>
+
+                        </div>
+
+                  <div class="form-group">
+                            <div class="col-xs-6">
+                               <label for="mobile"><h4>Mobile</h4></label>
+                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                            </div>
+                        </div>
+
+                  <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email"><h4>Email</h4></label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email." value="<?= $_SESSION["email"] ?>">
+                            </div>
+                        </div>
+
+                  <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password"><h4>Password</h4></label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                            </div>
+                        </div>
+
+                  <div class="form-group">
+
+                            <div class="col-xs-6">
+                              <label for="password2"><h4>Verify</h4></label>
+                                <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                            </div>
+                        </div>
+
+                  <div class="form-group">
+                             <div class="col-xs-12">
+                                  <br>
+                                	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                 	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                              </div>
+                        </div>
+
+                </form>
+
+              <hr>
+
+            </div><!--/tab-pane-->
+
+          </div><!--/tab-content-->
+
+        </div><!--/Parte de la derecha terminada--->
+
+      </div> <!--row-->
 
       </div>
 
     </div> <!--Fin del container-->
 
   </div> <!--Fin del Jumbotron-->
+
+  <!--Parte 3 del footer -->
+  <?php require 'assets/footer.php'; ?>
+
 
 </body>
 
